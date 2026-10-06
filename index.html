@@ -1,345 +1,947 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AllPanel 7 ID</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Cricket Legends</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-body{
-    background:#042b23;
-    color:#fff;
-    overflow-x:auto;
-}
-
-.container{
-    display:flex;
-    min-height:100vh;
-}
-
-.demo{
-    width:70%;
-    background:#111;
-}
-
-iframe{
-    width:100%;
-    height:100vh;
-    border:none;
-}
-
-.right{
-    width:30%;
-    padding:30px 22px;
-    background:linear-gradient(180deg,#008f73,#043d33);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.box{
-    width:100%;
-    background:#07110f;
-    border:1px solid #00e8ad;
-    border-radius:22px;
-    padding:24px 18px;
-    text-align:center;
-    box-shadow:0 0 30px rgba(0,232,173,.35);
-}
-
-.badge{
-    display:inline-block;
-    background:#00e8ad;
-    color:#001f18;
-    padding:10px 22px;
-    border-radius:30px;
-    font-weight:bold;
-    margin-bottom:16px;
-}
-
-h1{
-    color:#00e8ad;
-    font-size:30px;
-    text-transform:uppercase;
-    margin-bottom:12px;
-}
-
-.sub{
-    color:#ddd;
-    line-height:1.6;
-    margin-bottom:18px;
-    font-size:16px;
-}
-
-.process{
-    text-align:left;
-    background:linear-gradient(180deg,#07110f,#06483b);
-    border:1px solid #00e8ad;
-    border-radius:16px;
-    padding:18px;
-    margin:18px 0;
-}
-
-.process h2{
-    color:#00e8ad;
-    font-size:20px;
-    margin-bottom:12px;
-    text-align:center;
-}
-
-.process h3{
-    color:#fff;
-    font-size:18px;
-    margin:16px 0 8px;
-}
-
-.process p,
-.process li{
-    color:#ddd;
-    font-size:15px;
-    line-height:1.6;
-}
-
-.process ol{
-    padding-left:20px;
-}
-
-.manual-whatsapp,
-.signup{
-    display:block;
-    background:#00e8ad;
-    color:#001f18;
-    text-decoration:none;
-    padding:15px;
-    border-radius:14px;
-    font-size:20px;
-    font-weight:bold;
-    text-align:center;
-    box-shadow:0 0 18px rgba(0,232,173,.4);
-}
-
-.manual-whatsapp{
-    margin:14px 0 8px;
-}
-
-.signup{
-    margin-top:16px;
-}
-
-.manual-whatsapp:hover,
-.signup:hover{
-    background:#00c996;
-}
-
-.features{
-    display:grid;
-    gap:12px;
-    margin:22px 0 18px;
-}
-
-.feature{
-    background:linear-gradient(90deg,#092a24,#06483b);
-    border:1px solid #00e8ad;
-    border-radius:14px;
-    padding:14px;
-    font-size:17px;
-    font-weight:bold;
-}
-
-.feature span{
-    color:#00e8ad;
-}
-
-.website-row{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    margin-top:18px;
-    font-weight:bold;
-    flex-wrap:wrap;
-}
-
-.website-row a{
-    text-decoration:none;
-    word-break:break-word;
-}
-
-.website,
-.whatsapp-small{
-    color:#00e8ad;
-}
-
-.trust{
-    margin-top:18px;
-    color:#ccc;
-    line-height:1.7;
-}
-
-.footer{
-    margin-top:20px;
-    color:#888;
-    font-size:12px;
-}
-
-/* MOBILE — Laptop jaisa same layout */
-@media(max-width:768px){
-
-    body{
-        overflow-x:auto;
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .container{
-        width:1200px;
-        min-width:1200px;
-        flex-direction:row;
+    :root {
+      --red: #e21b2d;
+      --dark: #080808;
+      --dark2: #111;
+      --light: #f5f5f5;
+      --muted: #999;
     }
 
-    .demo{
-        width:70%;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .right{
-        width:30%;
-        padding:25px 18px;
+    body {
+      background: var(--dark);
+      color: white;
+      font-family: Inter, sans-serif;
+      overflow-x: hidden;
     }
 
-    iframe{
-        height:100vh;
-        min-height:700px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    h1{
-        font-size:28px;
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 78px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.15)
+      );
+      transition: .3s;
     }
 
-    .manual-whatsapp,
-    .signup{
-        font-size:19px;
+    nav.scrolled {
+      background: rgba(5,5,5,.96);
+      backdrop-filter: blur(12px);
     }
-}
-</style>
+
+    .logo {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      list-style: none;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      opacity: .85;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+      opacity: 1;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0,0,0,.9) 0%,
+          rgba(0,0,0,.5) 45%,
+          rgba(0,0,0,.25) 100%
+        ),
+        linear-gradient(
+          0deg,
+          #080808 0%,
+          transparent 45%
+        ),
+        url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=2000&q=90")
+        center/cover;
+    }
+
+    .hero-content {
+      width: 100%;
+      padding: 0 7% 100px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 4px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(70px, 12vw, 180px);
+      line-height: .82;
+      max-width: 900px;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      max-width: 550px;
+      color: #ccc;
+      margin-top: 28px;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 15px 28px;
+      border: 1px solid rgba(255,255,255,.35);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      transition: .25s;
+    }
+
+    .btn.primary {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: white;
+      color: black;
+      border-color: white;
+    }
+
+    /* SECTION */
+    section {
+      padding: 110px 7%;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(48px, 6vw, 90px);
+      line-height: .9;
+    }
+
+    .section-title span {
+      color: var(--red);
+    }
+
+    .view-all {
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 800;
+      border-bottom: 1px solid var(--red);
+      padding-bottom: 6px;
+    }
+
+    /* MATCHES */
+    .matches {
+      background: #0d0d0d;
+    }
+
+    .match-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .match-card {
+      background: #151515;
+      border: 1px solid #292929;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .match-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--red);
+    }
+
+    .match-date {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .teams {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .team {
+      width: 40%;
+    }
+
+    .team-logo {
+      width: 65px;
+      height: 65px;
+      margin: auto auto 12px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #222;
+      font-size: 22px;
+      font-weight: 800;
+      border: 1px solid #444;
+    }
+
+    .team-name {
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .vs {
+      color: var(--red);
+      font-family: "Bebas Neue";
+      font-size: 25px;
+    }
+
+    .venue {
+      color: #777;
+      font-size: 11px;
+      margin-top: 24px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* TEAMS */
+    .team-section {
+      background: #080808;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .country {
+      min-height: 280px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 30px;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.9), transparent),
+        url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=900&q=80")
+        center/cover;
+      transition: .4s;
+    }
+
+    .country:nth-child(2) {
+      background-position: 60% center;
+    }
+
+    .country:nth-child(3) {
+      filter: grayscale(1);
+    }
+
+    .country:hover {
+      transform: scale(1.02);
+    }
+
+    .country h3 {
+      font-family: "Bebas Neue";
+      font-size: 48px;
+      letter-spacing: 1px;
+    }
+
+    .country p {
+      color: #bbb;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    /* PLAYERS */
+    .players {
+      background: #111;
+    }
+
+    .player-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .player {
+      min-height: 430px;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.95), transparent 65%),
+        url("https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=700&q=80")
+        center/cover;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 25px;
+      transition: .3s;
+    }
+
+    .player:hover {
+      transform: translateY(-7px);
+    }
+
+    .player:nth-child(2) {
+      filter: grayscale(1);
+    }
+
+    .player:nth-child(3) {
+      background-position: 70% center;
+    }
+
+    .player-info h3 {
+      font-family: "Bebas Neue";
+      font-size: 42px;
+    }
+
+    .player-info p {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    /* NEWS */
+    .news-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 15px;
+    }
+
+    .news-card {
+      min-height: 330px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 25px;
+      overflow: hidden;
+      background:
+        linear-gradient(to top, #000, transparent 70%),
+        url("https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&w=900&q=80")
+        center/cover;
+    }
+
+    .news-card:nth-child(2) {
+      background-image:
+        linear-gradient(to top, #000, transparent 70%),
+        url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .news-card:nth-child(3) {
+      background-image:
+        linear-gradient(to top, #000, transparent 70%),
+        url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=80");
+    }
+
+    .news-card h3 {
+      font-family: "Bebas Neue";
+      font-size: 32px;
+      line-height: 1;
+    }
+
+    .news-tag {
+      color: var(--red);
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    /* CTA */
+    .cta {
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.95), rgba(0,0,0,.3)),
+        url("https://images.unsplash.com/photo-1593766827228-8737b8f2f0e0?auto=format&fit=crop&w=1800&q=90")
+        center/cover;
+    }
+
+    .cta-content {
+      max-width: 700px;
+    }
+
+    .cta h2 {
+      font-family: "Bebas Neue";
+      font-size: clamp(65px, 9vw, 130px);
+      line-height: .85;
+    }
+
+    .cta p {
+      margin: 25px 0;
+      color: #bbb;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #050505;
+      padding: 70px 7% 30px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid #222;
+    }
+
+    .footer-logo {
+      font-family: "Bebas Neue";
+      font-size: 55px;
+    }
+
+    .footer-logo span {
+      color: var(--red);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 60px;
+    }
+
+    .footer-links div h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+
+    .copyright {
+      color: #555;
+      font-size: 11px;
+      padding-top: 25px;
+    }
+
+    /* MOBILE */
+    @media(max-width: 900px) {
+      .nav-links {
+        position: fixed;
+        inset: 78px 0 auto 0;
+        background: #080808;
+        flex-direction: column;
+        padding: 30px;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .match-grid,
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .player-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .news-card:first-child {
+        grid-column: span 2;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+    }
+
+    @media(max-width: 600px) {
+      section {
+        padding: 75px 5%;
+      }
+
+      .hero-content {
+        padding: 0 5% 70px;
+      }
+
+      .hero h1 {
+        font-size: 80px;
+      }
+
+      .match-grid,
+      .team-grid,
+      .player-grid,
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .news-card:first-child {
+        grid-column: auto;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <a href="#" class="logo">WCL<span>.</span></a>
 
-    <div class="demo">
-        <iframe src="https://www.allpanel7.com/?code=MAHA1991"></iframe>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#matches">Matches</a></li>
+      <li><a href="#teams">Teams</a></li>
+      <li><a href="#players">Legends</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#tickets">Tickets</a></li>
+    </ul>
+
+    <div class="menu-btn" id="menuBtn">☰</div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">World Cricket Legends</div>
+      <h1>THE<br>LEGENDS<br>RETURN</h1>
+
+      <p>
+        The world's greatest cricket legends return to the field.
+        Experience fierce rivalries, unforgettable moments and
+        cricket like never before.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#matches" class="btn primary">View Matches</a>
+        <a href="#teams" class="btn">Explore Teams</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MATCHES -->
+  <section class="matches" id="matches">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Live the action</div>
+        <h2 class="section-title">UPCOMING <span>MATCHES</span></h2>
+      </div>
+      <a href="#" class="view-all">All Fixtures →</a>
     </div>
 
-    <div class="right">
+    <div class="match-grid">
 
-        <div class="box">
+      <div class="match-card">
+        <div class="match-date">Friday · 7:30 PM</div>
 
-            <div class="badge">ALLPANEL7</div>
+        <div class="teams">
+          <div class="team">
+            <div class="team-logo">IN</div>
+            <div class="team-name">INDIA</div>
+          </div>
 
-            <h1>Get Your AllPanel7 ID</h1>
+          <div class="vs">VS</div>
 
-            <p class="sub">
-                Choose the registration method that's most convenient for you and get started with AllPanel 7 today!
-            </p>
-
-            <div class="process">
-
-                <h2>Get Your AllPanel 7 ID – Your Choice!</h2>
-
-                <h3>✅ Manual ID</h3>
-
-                <p>
-                    Click the <strong>"WhatsApp Now"</strong> button and our team will create your ID for you.
-                </p>
-
-                <a class="manual-whatsapp"
-                   href="https://wa.me/+917980303785?text=Hello%20I%20want%20new%20manual%20ID"
-                   target="_blank">
-                    📲 WhatsApp Now
-                </a>
-
-                <h3>✅ Self-Registration</h3>
-
-                <p>
-                    Click the <strong>"Sign Up"</strong> button and follow these simple steps:
-                </p>
-
-                <ol>
-                    <li>Enter your mobile number.</li>
-                    <li>Create your username.</li>
-                    <li>Create your password and confirm it.</li>
-                    <li>The Signup Code is pre-filled as <strong>MAHA1991</strong>.</li>
-                    <li>Click <strong>"Sign Up"</strong> to complete your registration.</li>
-                </ol>
-
-                <a class="signup"
-                   href="https://www.allpanel7.com/?code=MAHA1991"
-                   target="_blank">
-                    📝 Sign Up
-                </a>
-
-            </div>
-
-            <div class="features">
-
-                <div class="feature">
-                    Minimum Deposit:
-                    <span>₹100 Only</span>
-                </div>
-
-                <div class="feature">
-                    Welcome Bonus:
-                    <span>10%</span>
-                </div>
-
-                <div class="feature">
-                    Auto and Manual Service:
-                    <span>Available</span>
-                </div>
-
-                <div class="feature">
-                    Quick Help:
-                    <span>24/7 Support Available</span>
-                </div>
-
-            </div>
-
-            <div class="website-row">
-
-                <a class="website"
-                   href="https://www.allpanel7.com/?code=MAHA1991"
-                   target="_blank">
-                    🌐 www.allpanel7.com/?code=MAHA1991
-                </a>
-
-                <a class="whatsapp-small"
-                   href="https://wa.me/+917980303785"
-                   target="_blank">
-                    💬 WhatsApp
-                </a>
-
-            </div>
-
-            <div class="trust">
-                ✅ Trusted Manual Support<br>
-                ✅ Simple Process<br>
-                ✅ Fast Response
-            </div>
-
-            <div class="footer">
-                18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
-            </div>
-
+          <div class="team">
+            <div class="team-logo">AU</div>
+            <div class="team-name">AUSTRALIA</div>
+          </div>
         </div>
 
+        <div class="venue">Dubai International Stadium</div>
+      </div>
+
+      <div class="match-card">
+        <div class="match-date">Saturday · 8:00 PM</div>
+
+        <div class="teams">
+          <div class="team">
+            <div class="team-logo">SA</div>
+            <div class="team-name">SOUTH AFRICA</div>
+          </div>
+
+          <div class="vs">VS</div>
+
+          <div class="team">
+            <div class="team-logo">WI</div>
+            <div class="team-name">WEST INDIES</div>
+          </div>
+        </div>
+
+        <div class="venue">Sharjah Cricket Stadium</div>
+      </div>
+
+      <div class="match-card">
+        <div class="match-date">Sunday · 7:00 PM</div>
+
+        <div class="teams">
+          <div class="team">
+            <div class="team-logo">EN</div>
+            <div class="team-name">ENGLAND</div>
+          </div>
+
+          <div class="vs">VS</div>
+
+          <div class="team">
+            <div class="team-logo">BD</div>
+            <div class="team-name">BANGLADESH</div>
+          </div>
+        </div>
+
+        <div class="venue">Abu Dhabi Cricket Stadium</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TEAMS -->
+  <section class="team-section" id="teams">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">The contenders</div>
+        <h2 class="section-title">MEET THE <span>TEAMS</span></h2>
+      </div>
     </div>
 
-</div>
+    <div class="team-grid">
+
+      <div class="country">
+        <div>
+          <p>Team</p>
+          <h3>INDIA</h3>
+        </div>
+      </div>
+
+      <div class="country">
+        <div>
+          <p>Team</p>
+          <h3>AUSTRALIA</h3>
+        </div>
+      </div>
+
+      <div class="country">
+        <div>
+          <p>Team</p>
+          <h3>ENGLAND</h3>
+        </div>
+      </div>
+
+      <div class="country">
+        <div>
+          <p>Team</p>
+          <h3>SOUTH AFRICA</h3>
+        </div>
+      </div>
+
+      <div class="country">
+        <div>
+          <p>Team</p>
+          <h3>WEST INDIES</h3>
+        </div>
+      </div>
+
+      <div class="country">
+        <div>
+          <p>Team</p>
+          <h3>BANGLADESH</h3>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PLAYERS -->
+  <section class="players" id="players">
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Icons of the game</div>
+        <h2 class="section-title">THE <span>LEGENDS</span></h2>
+      </div>
+
+      <a href="#" class="view-all">View All Players →</a>
+    </div>
+
+    <div class="player-grid">
+
+      <div class="player">
+        <div class="player-info">
+          <p>India</p>
+          <h3>LEGEND 01</h3>
+        </div>
+      </div>
+
+      <div class="player">
+        <div class="player-info">
+          <p>Australia</p>
+          <h3>LEGEND 02</h3>
+        </div>
+      </div>
+
+      <div class="player">
+        <div class="player-info">
+          <p>England</p>
+          <h3>LEGEND 03</h3>
+        </div>
+      </div>
+
+      <div class="player">
+        <div class="player-info">
+          <p>South Africa</p>
+          <h3>LEGEND 04</h3>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section id="news">
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Latest stories</div>
+        <h2 class="section-title">NEWS & <span>UPDATES</span></h2>
+      </div>
+      <a href="#" class="view-all">All News →</a>
+    </div>
+
+    <div class="news-grid">
+
+      <article class="news-card">
+        <div>
+          <div class="news-tag">Featured</div>
+          <h3>The greatest cricket legends are ready for battle</h3>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div>
+          <div class="news-tag">News</div>
+          <h3>Teams announced for the new season</h3>
+        </div>
+      </article>
+
+      <article class="news-card">
+        <div>
+          <div class="news-tag">Inside WCL</div>
+          <h3>Inside the legends' training camp</h3>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="tickets">
+    <div class="cta-content">
+      <div class="eyebrow">Don't miss the action</div>
+      <h2>BE THERE<br>FOR HISTORY</h2>
+
+      <p>
+        Witness the greatest names in cricket come together
+        for a tournament built for unforgettable moments.
+      </p>
+
+      <a href="#" class="btn primary">Get Tickets</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-top">
+
+      <div class="footer-logo">
+        WORLD<br>CRICKET<span>.</span>
+      </div>
+
+      <div class="footer-links">
+
+        <div>
+          <h4>Explore</h4>
+          <a href="#matches">Matches</a>
+          <a href="#teams">Teams</a>
+          <a href="#players">Players</a>
+          <a href="#news">News</a>
+        </div>
+
+        <div>
+          <h4>Follow</h4>
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+          <a href="#">Facebook</a>
+          <a href="#">X / Twitter</a>
+        </div>
+
+        <div>
+          <h4>Information</h4>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 World Cricket Legends. All rights reserved.
+    </div>
+
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Close mobile menu after clicking
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
+
+    // Navbar background on scroll
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+
+    // Simple reveal animation
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(
+      ".match-card, .country, .player, .news-card"
+    ).forEach(el => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(30px)";
+      el.style.transition = "opacity .7s ease, transform .7s ease";
+      observer.observe(el);
+    });
+  </script>
 
 </body>
 </html>
+```
